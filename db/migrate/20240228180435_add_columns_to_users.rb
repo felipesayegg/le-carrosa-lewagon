@@ -9,3 +9,4 @@ class AddColumnsToUsers < ActiveRecord::Migration[7.1]
     add_column :users, :state, :string
   end
 end
+# teste teste
