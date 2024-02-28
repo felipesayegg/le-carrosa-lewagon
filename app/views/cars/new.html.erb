@@ -1,0 +1,10 @@
+<h2>Novo carro</h2>
+
+<%= simple_form_for [@car] do |f| %>
+    <%= f.input :brand, label: "Marca" %>
+    <%= f.input :mod, label: "Modelo" %>
+    <%= f.input :year, label: "Ano" %>
+    <%= f.input :description, label: "Descrição" %>
+    <%= f.input :price, label: "Valor" %>
+  <%= f.submit 'Adicionar carro', class: 'btn btn-primary' %>
+<% end %>
