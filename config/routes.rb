@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :cars
+  # resources :cars
+
+  get 'cars/new', to: 'cars#new', as: 'new_car'
+
+  get 'cars/:id/edit', to: 'cars#edit', as: 'edit_car'
+
+  get 'cars/:id', to: 'tasks#show', as: 'car'
+
+  post 'cars', to: 'cars#create'
+
+  patch 'cars/:id', to: 'cars#update'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
