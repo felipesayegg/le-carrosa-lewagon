@@ -1,9 +1,21 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+# db/seeds.rb
+
+require 'faker'
+
+# Criando alguns usuários
+User.create(email: 'felipesayeg2018@gmail.com', password: '123123')
+User.create(email: 'marcosoftn1@gmail.com', password: '123123')
+
+# Povoando a tabela de cars com Faker
+20.times do
+  Car.create(
+    year: Faker::Number.between(from: 2000, to: 2022),
+    brand: Faker::Vehicle.make,
+    mod: Faker::Vehicle.model,
+    description: Faker::Vehicle.standard_specs,
+    price: Faker::Commerce.price(range: 10000.0..80000.0),
+    km: "#{Faker::Number.between(from: 1000, to: 100000)} km",
+    user_id: Faker::Number.between(from: 1, to: 2) # associando aleatoriamente com um dos usuários criados acima
+  )
+end
+
