@@ -7,7 +7,7 @@ User.create(email: 'felipesayeg2018@gmail.com', password: '123123')
 User.create(email: 'marcosoftn1@gmail.com', password: '123123')
 
 # Povoando a tabela de cars com Faker
-20.times do
+10.times do
   Car.create(
     year: Faker::Number.between(from: 2000, to: 2022),
     brand: Faker::Vehicle.make,
@@ -18,4 +18,3 @@ User.create(email: 'marcosoftn1@gmail.com', password: '123123')
     user_id: Faker::Number.between(from: 1, to: 2) # associando aleatoriamente com um dos usuários criados acima
   )
 end
-
