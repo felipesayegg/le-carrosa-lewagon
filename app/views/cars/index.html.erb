@@ -10,6 +10,7 @@
           <p class="card-text">Ano: <%= car.year %></p>
           <p class="card-text">Marca: <%= car.brand %></p>
           <p class="card-text">Preço: <%= car.price %></p>
+           <%= link_to "Ver mais", car_path(car), class: "btn btn-primary" %>
         </div>
       </div>
     </div>

@@ -1,0 +1,7 @@
+<h1><%= @car.brand %> <%= @car.mod %> <%= @car.year %></h1>
+<p><strong>Description:</strong> <%= @car.description %></p>
+<p><strong>Price:</strong> <%= number_to_currency(@car.price) %></p>
+<p><strong>Kilometers:</strong> <%= @car.km %></p>
+<p><strong>Owner:</strong> <%= @car.user.email %></p>
+
+<%= link_to 'Back', cars_path %>
