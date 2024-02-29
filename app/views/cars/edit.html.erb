@@ -6,5 +6,13 @@
     <%= f.input :year, label: "Ano" %>
     <%= f.input :description, label: "Descrição" %>
     <%= f.input :price, label: "Valor" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Fotos"%>
+
+
   <%= f.submit 'Editar carro', class: 'btn btn-primary' %>
+
 <% end %>
+
+  <% @car.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>

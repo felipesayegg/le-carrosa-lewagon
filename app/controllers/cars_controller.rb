@@ -30,7 +30,6 @@ class CarsController < ApplicationController
 
   def update
     @car = current_user.cars.find(params[:id])
-
     if @car.update(car_params)
       redirect_to car_path(@car)
     else
@@ -41,7 +40,7 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:year, :brand, :mod, :description, :price)
+    params.require(:car).permit(:year, :brand, :mod, :description, :price, photos: [])
   end
   
 end
