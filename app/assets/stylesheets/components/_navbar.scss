@@ -1,12 +1,48 @@
-.navbar-lewagon {
+.navbar-lecarrossa {
+  height: 80px;
+  background-color: rgb(59, 59, 59);
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(248, 201, 131);
+  color: rgb(255, 246, 235);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  background: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  text-decoration: none;
+
+  .navbar-left-lecarrossa {
+    margin-left: 48px;
+  }
+
+  .navbar-center-lecarrossa {
+    margin-top: 8px;
+  }
+
+  .navbar-right-lecarrossa {
+    margin-top: 8px;
+    margin-right: 48px;
+
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-lecarrossa-link {
+  color: rgb(255, 246, 235);
+  text-decoration: none;
+  transition: 100ms;
+
+  &:hover {
+    color: rgb(187, 182, 177);
+    transition: 100ms;
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-lecarrossa-logo {
+  height: 64px;
+}
+
+.navbar-lecarrossa-email {
+  margin-top: 0px;
+  font-size: 16px;
 }
