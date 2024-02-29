@@ -1,19 +1,21 @@
-Car.create!(
-  year: 2020,
-  brand: "Toyota",
-  description: "Carro sedan confortável",
-  price: 25000.0,
-  # user_id: 1,
-  created_at: Time.now,
-  updated_at: Time.now
-)
+# db/seeds.rb
 
-Car.create!(
-  year: 2018,
-  brand: "Honda",
-  description: "Carro SUV espaçoso",
-  price: 30000.0,
-  # user_id: 1,
-  created_at: Time.now,
-  updated_at: Time.now
-)
+require 'faker'
+
+# Criando alguns usuários
+User.create(email: 'felipesayeg2018@gmail.com', password: '123123')
+User.create(email: 'marcosoftn1@gmail.com', password: '123123')
+
+# Povoando a tabela de cars com Faker
+20.times do
+  Car.create(
+    year: Faker::Number.between(from: 2000, to: 2022),
+    brand: Faker::Vehicle.make,
+    mod: Faker::Vehicle.model,
+    description: Faker::Vehicle.standard_specs,
+    price: Faker::Commerce.price(range: 10000.0..80000.0),
+    km: "#{Faker::Number.between(from: 1000, to: 100000)} km",
+    user_id: Faker::Number.between(from: 1, to: 2) # associando aleatoriamente com um dos usuários criados acima
+  )
+end
+

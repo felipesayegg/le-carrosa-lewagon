@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  get 'cars/new', to: 'cars#new', as: 'new_car'
-  get 'cars/:id/edit', to: 'cars#edit', as: 'edit_car'
+  resources :cars
+  # get 'cars/new', to: 'cars#new', as: 'new_car'
+  # get 'cars/:id/edit', to: 'cars#edit', as: 'edit_car'
 
-  get 'cars/:id', to: 'cars#show', as: 'car'
+  # get 'cars/:id', to: 'cars#show', as: 'car'
 
-  post 'cars', to: 'cars#create'
-  patch 'cars/:id', to: 'cars#update'
+  # post 'cars', to: 'cars#create'
+  # patch 'cars/:id', to: 'cars#update'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
