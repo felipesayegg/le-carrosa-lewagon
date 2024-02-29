@@ -1,13 +1,45 @@
-<h1><%= @car.brand %> <%= @car.mod %> <%= @car.year %></h1>
-<p><strong>Description:</strong> <%= @car.description %></p>
-<p><strong>Price:</strong> <%= number_to_currency(@car.price) %></p>
-<p><strong>Kilometers:</strong> <%= @car.km %></p>
-<p><strong>Owner:</strong> <%= @car.user.email %></p>
 
-<%= link_to 'Back', cars_path %>
-<% if @car.user == current_user %>
-  <%= link_to 'editar carro', edit_car_path(@car) %>
-  <%= link_to  car_path(@car), data: {turbo_method: :delete}, class: "card-icon" do %>
-    <i class="fa-solid fa-trash"></i>
+<div class="container mt-5" style="border: 1px red solid;">
+  <div class="cards">
+    <% @car.photos.each do |photo| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path photo.key, height: 300, width: 400, crop: :fill %>)">
+      </div>
+    <% end %>
+
+  </div>
+
+  <div class="row mt-5 bg-info p-5" style="border: 1px green solid;">
+    <div class="col-6">
+      <h1><strong> Modelo do carro </strong> </h1>
+      <h3><%= @car.brand %> <%= @car.mod %> <%= @car.year %></h3>
+      <p><strong>Descrição:</strong> <%= @car.description %></p>
+      <p><strong>Kilômetros:</strong> <%= @car.km %></p>
+      <p><strong>Vendedor:</strong> <%= @car.user.email %></p>
+    </div>
+
+
+    <div class="col-6 d-flex justify-content-end" style="border: 1px blue solid;">
+
+      <div class="row me-3" style="border: 1px purple solid;">
+        <div class="col">
+          <h1><strong> Valor </strong></h1>
+          <h3> <%= number_to_currency(@car.price) %></h3>
+          <button type="button" class="btn btn-success btn-lg m-5 .bg-success.bg-gradient">Comprar</button>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+  <%= link_to 'Back', cars_path %>
+  <% if @car.user == current_user %>
+    <%= link_to 'editar carro', edit_car_path(@car) %>
+    <%= link_to  car_path(@car), data: {turbo_method: :delete}, class: "card-icon" do %>
+      <i class="fa-solid fa-trash"></i>
+    <% end %>
   <% end %>
-<% end %>
+</div>
