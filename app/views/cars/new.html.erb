@@ -1,12 +1,23 @@
-<h2>Novo carro</h2>
-
-<%= simple_form_for [@car] do |f| %>
-    <%= f.input :brand, label: "Marca" %>
-    <%= f.input :mod, label: "Modelo" %>
-    <%= f.input :year, label: "Ano" %>
-    <%= f.input :description, label: "Descrição" %>
-    <%= f.input :km, label: "Kilômetros rodados" %>
-    <%= f.input :price, label: "Valor" %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Fotos"%>
-  <%= f.submit 'Adicionar carro', class: 'btn btn-primary' %>
-<% end %>
+<div class="bg-log-backgroud">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <div class="card">
+          <%= image_tag "car.jpg", class: "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title">Cadastre seu carro.</h5>
+            <%= simple_form_for [@car] do |f| %>
+            <%= f.input :brand, label: "Marca" %>
+            <%= f.input :mod, label: "Modelo" %>
+            <%= f.input :year, label: "Ano" %>
+            <%= f.input :description, label: "Descrição" %>
+            <%= f.input :price, label: "Valor" %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Fotos"%>
+            <%= f.submit 'Adicionar carro', class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
