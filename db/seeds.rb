@@ -3,8 +3,8 @@
 require 'faker'
 
 # Criando alguns usuários
-User.create(email: 'felipesayeg2018@gmail.com', password: '123123')
-User.create(email: 'marcosoftn1@gmail.com', password: '123123')
+User.create(email: 'felipesayeg2018@gmail.com', password: '123123', first_name: "felipe", last_name: "sayeg")
+User.create(email: 'marcosoftn1@gmail.com', password: '123123', first_name: "felipe", last_name: "sayeg")
 
 # Povoando a tabela de cars com Faker
 5.times do
