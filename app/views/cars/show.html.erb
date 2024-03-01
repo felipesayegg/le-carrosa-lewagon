@@ -33,7 +33,9 @@
         <div class="col-6">
           <h1><strong> Valor </strong></h1>
           <h3> <%= number_to_currency(@car.price) %></h3>
-          <button type="button" class="btn btn-success btn-lg m-5"style="color: #FFFFFF;">Comprar</button>
+          <% if @car.user != current_user %>
+            <%= link_to 'Comprar', new_car_order_path(@car), class: "btn btn-success btn.lg btn m-5" %>
+          <% end %>
         </div>
       </div>
     </div>
