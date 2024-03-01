@@ -1,6 +1,9 @@
-<h1>show</h1>
+<h2><%= @order.user.first_name %>, seu pedido <strong><%= @order.id %></strong> foi efetuado com sucesso</h2>
+<br>
 
-<p>brand: <%= @order.car.brand %></p>
-<p>Date: <%= @order.date %></p>
-<p>Seller: <%= @order.car.user.first_name %></p>
-<p>Buyer: <%= @order.user.first_name %></p>
+<h3><strong>Dados do pedido:</strong></h3>
+<p>Marca: <%= @order.car.brand %></p>
+<p>Modelo: <%= @order.car.mod %></p>
+<p>Vendedor: <%= @order.car.user.first_name %></p>
+<p>Comprador: <%= @order.user.first_name %></p>
+<p>Data do pedido: <%= @order.created_at %></p>
