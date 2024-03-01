@@ -33,8 +33,12 @@
         <div class="col-6">
           <h1><strong> Valor </strong></h1>
           <h3> <%= number_to_currency(@car.price) %></h3>
-          <% if @car.user != current_user %>
-            <%= link_to 'Comprar', new_car_order_path(@car), class: "btn btn-success btn.lg btn m-5" %>
+          <% if user_signed_in? %>
+            <% if @car.user != current_user %>
+              <%= link_to 'Comprar', new_car_order_path(@car), class: "btn btn-success btn.lg btn m-5" %>
+            <% end %>
+          <% else %>
+            <%= link_to 'Comprar', new_car_order_path(new_user_session_path), class: "btn btn-success btn.lg btn m-5" %>
           <% end %>
         </div>
       </div>
