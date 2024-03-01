@@ -17,7 +17,7 @@
 </div>
 
 <div class="container-fluid mb-0">
- <div class="row mt-5 ps-5 pt-5" style="background-color: #fdf0cc">
+ <div class="row mt-5 pt-5" id="espaçamento-infos-esquerda" style="background-color: #fdf0cc">
     <div class="col-6">
 
       <h1><strong> Modelo do carro </strong> </h1>
@@ -29,7 +29,7 @@
       </div>
 
     <div class="col-6 d-flex justify-content-end">
-      <div class="row me-3">
+      <div class="row me-3" id="espaçamento-infos-direita">
         <div class="col-6">
           <h1><strong> Valor </strong></h1>
           <h3> <%= number_to_currency(@car.price) %></h3>
