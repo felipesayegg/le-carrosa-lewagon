@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root to: "pages#home"
-  resources :cars
+  resources :cars do
+    resources :orders, only: [:new, :create]
+  end
+
+  resources :orders, only: :show
 
   get 'my_cars', to: 'cars#my_cars', as: 'my_cars'
 

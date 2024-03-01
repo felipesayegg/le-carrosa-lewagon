@@ -1,0 +1,19 @@
+
+<div class="bg-log-backgroud">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <div class="card">
+          <%= image_tag "car.jpg", class: "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title">Cadastre seu carro.</h5>
+            <%= simple_form_for [@car, @order] do |f| %>
+            <%= f.input :date, label: "Data" %>
+            <%= f.submit 'Adicionar ordem', class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
