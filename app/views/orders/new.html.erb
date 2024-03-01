@@ -6,10 +6,13 @@
         <div class="card">
           <%= image_tag "car.jpg", class: "card-img-top" %>
           <div class="card-body">
-            <h5 class="card-title">Cadastre seu carro.</h5>
+            <h5 class="card-title"><strong>Dados da compra:</strong></h5>
+            <p>Marca: <%= @car.brand %></p>
+            <p>Modelo: <%= @car.mod %></p>
+            <p>Vendedor: <%= @car.user.first_name %></p>
+            <p>Preço: R$<%= @car.price %></p>
             <%= simple_form_for [@car, @order] do |f| %>
-            <%= f.input :date, label: "Data" %>
-            <%= f.submit 'Adicionar ordem', class: 'btn btn-primary' %>
+            <%= f.submit 'Confirmar compra', class: 'btn btn-primary' %>
             <% end %>
           </div>
         </div>
