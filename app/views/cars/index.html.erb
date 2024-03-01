@@ -14,7 +14,7 @@
             <p id="card-text-year" class="card-text"><%= car.year %></p>
             <p id="card-text-km" class="card-text"><%= car.km %> <span class="kms-span">kms</span></p>
           </div>
-          <p id="card-text-price" class="card-text"><%= car.price %></p>
+          <p id="card-text-price" class="card-text">R$ <%= car.price %></p>
           <%= link_to "Ver mais", car_path(car), class: "btn btn-primary" %>
         </div>
       </div>
