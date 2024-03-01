@@ -1,0 +1,17 @@
+<h1>Meus anúncios</h1>
+
+<div class="row">
+  <% @cars.each do |car| %>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= car.mod %></h5>
+          <p class="card-text">Ano: <%= car.year %></p>
+          <p class="card-text">Marca: <%= car.brand %></p>
+          <p class="card-text">Preço: <%= car.price %></p>
+           <%= link_to "Ver mais", car_path(car), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
