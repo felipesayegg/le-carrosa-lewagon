@@ -7,7 +7,7 @@ User.create(email: 'felipesayeg2018@gmail.com', password: '123123', first_name: 
 User.create(email: 'marcosoftn1@gmail.com', password: '123123', first_name: "felipe", last_name: "sayeg")
 
 # Povoando a tabela de cars com Faker
-5.times do
+3.times do
   Car.create(
     year: Faker::Number.between(from: 2000, to: 2022),
     brand: Faker::Vehicle.make,

@@ -1,26 +1,26 @@
 <div class="navbar-lecarrossa">
   <div class="navbar-left-lecarrossa">
     <%= link_to cars_path do %>
-      <%= image_tag "logo_sm.png", class: "navbar-lecarrossa-logo" %>
+      <%= image_tag "logo.png", class: "navbar-lecarrossa-logo" %>
     <% end %>
   </div>
 
 <% if user_signed_in? %>
   <div class="navbar-center-lecarrossa">
-    <h2><%= link_to "Anunciar veículo", new_car_path, class: "navbar-lecarrossa-link" %></h2>
+
   </div>
 
-    <div class="navbar-right-lecarrossa rounded">
+    <div class="navbar-right-lecarrossa">
     <h2>
           <li class="nav-item dropdown navbar-lecarrossa-list">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a href="#" class="menu" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa-solid fa-bars navbar-lecarrossa-link"></i>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <h6 class="dropdown-header"><strong><%= current_user.first_name.capitalize + ' ' + current_user.last_name.capitalize %></strong></h6>
-              <%= link_to "Editar Perfil", edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Editar perfil", edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Anunciar veículo", new_car_path, class: "dropdown-item" %>
               <%= link_to "Meus anúncios", my_cars_path, class: "dropdown-item" %>
-              <%= link_to "", "#", class: "dropdown-item" %>
               <div class="dropdown-divider"></div>
               <%= link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
@@ -30,7 +30,7 @@
 
 <% else %>
   <div class="navbar-right-lecarrossa">
-    <h2><%= link_to "Entrar", new_user_session_path, class: "navbar-lecarrossa-link" %></h2>
+    <h4><%= link_to "Entrar", new_user_session_path, class: "navbar-lecarrossa-link" %></h4>
   </div>
 
 <% end %>
