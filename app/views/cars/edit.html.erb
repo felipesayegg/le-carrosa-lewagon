@@ -1,18 +1,26 @@
-<h2>Editar carro</h2>
-
-<%= simple_form_for [@car] do |f| %>
-    <%= f.input :brand, label: "Marca" %>
-    <%= f.input :mod, label: "Modelo" %>
-    <%= f.input :year, label: "Ano" %>
-    <%= f.input :description, label: "Descrição" %>
-    <%= f.input :price, label: "Valor" %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Fotos"%>
-
-
-  <%= f.submit 'Editar carro', class: 'btn btn-primary' %>
-
-<% end %>
-
-  <% @car.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
+<div class="bg-log-backgroud">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <div class="card">
+          <%= image_tag "car.jpg", class: "card-img-top" %>
+          <div class="card-body">
+            <%= simple_form_for [@car] do |f| %>
+            <%= f.input :brand, label: "Marca" %>
+            <%= f.input :mod, label: "Modelo" %>
+            <%= f.input :year, label: "Ano" %>
+            <%= f.input :description, label: "Descrição" %>
+            <%= f.input :price, label: "Valor" %>
+            <%= f.input :brand, label: "Km" %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Fotos"%>
+            <%= f.submit 'Editar carro', class: 'btn btn-primary' %>
+            <% end %>
+            <% @car.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

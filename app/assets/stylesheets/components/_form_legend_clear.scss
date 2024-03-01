@@ -8,3 +8,33 @@
 legend ~ div.form-check:first-of-type {
   clear: left;
 }
+.form-flex{
+  display:flex;
+  gap:12px;
+
+  .btn-login{
+    width: 100%;
+    background-color: rgb(0, 202, 135);
+    color: #fff;
+  }
+.btn-signup{
+  width: 100%;
+  border: 1px solid teal;
+  color:teal;
+}
+
+}
+
+.bg-log-backgroud{
+background-image: url(https://plus.unsplash.com/premium_photo-1682125726825-3c0049c0aae3?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+backdrop-filter: blur(50px);
+background-size: cover;
+
+}
+
+
+.btn-page-sign-up-sign-up{
+  width: 100%;
+  background-color: rgb(0, 202, 135);
+  color: #fff;
+}
