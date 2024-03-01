@@ -1,4 +1,4 @@
-<div class="container mt-5" style="border: 1px red solid;">
+<div class="container mt-5 pb-3">
   <div class="row">
     <% @car.photos.each do |photo| %>
       <div class="col-md-4 mb-3">
@@ -7,28 +7,6 @@
       </div>
     <% end %>
   </div>
-
-  <div class="row mt-5 pt-5" style="background-color: #fdf0cc; border: 1px green solid;">
-    <div class="col-6">
-      <h1><strong> Modelo do carro </strong> </h1>
-      <h3><%= @car.brand %> <%= @car.mod %> <%= @car.year %></h3>
-      <p><strong>Descrição:</strong> <%= @car.description %></p>
-      <p><strong>Kilômetros:</strong> <%= @car.km %></p>
-      <p><strong>Vendedor:</strong> <%= @car.user.email %></p>
-    </div>
-
-
-    <div class="col-6 d-flex justify-content-end" style="border: 1px blue solid;">
-      <div class="row me-3" style="border: 1px purple solid;">
-        <div class="col">
-          <h1><strong> Valor </strong></h1>
-          <h3> <%= number_to_currency(@car.price) %></h3>
-          <button type="button" class="btn btn-success btn-lg m-5"style="color: #FFFFFF;">Comprar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <%= link_to 'Back', cars_path %>
   <% if @car.user == current_user %>
     <%= link_to 'editar carro', edit_car_path(@car) %>
@@ -36,4 +14,28 @@
       <i class="fa-solid fa-trash"></i>
     <% end %>
   <% end %>
+</div>
+
+<div class="container-fluid mb-0">
+ <div class="row mt-5 ps-5 pt-5" style="background-color: #fdf0cc">
+    <div class="col-6">
+
+      <h1><strong> Modelo do carro </strong> </h1>
+        <h3><%= @car.brand %> <%= @car.mod %> <%= @car.year %></h3>
+        <p><strong>Descrição:</strong> <%= @car.description %></p>
+        <p><strong>Kilômetros:</strong> <%= @car.km %></p>
+        <p><strong>Vendedor:</strong> <%= @car.user.email %></p>
+
+      </div>
+
+    <div class="col-6 d-flex justify-content-end">
+      <div class="row me-3">
+        <div class="col-6">
+          <h1><strong> Valor </strong></h1>
+          <h3> <%= number_to_currency(@car.price) %></h3>
+          <button type="button" class="btn btn-success btn-lg m-5"style="color: #FFFFFF;">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
