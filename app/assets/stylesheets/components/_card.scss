@@ -1,55 +1,81 @@
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+// Não editar o component, fazer uma copia e adaptar para outro uso!
+
+h5,
+p {
+  margin: 0px;
+  padding: 0px;
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 180px;
+.card {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: none;
+  width: 280px;
+  background: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: 0px;
+  padding: 0px;
+
+  .img {
+    width: 100%;
+    height: 220px;
+    border-radius: 8px 8px 0px 0px;
+    background: #c1c1c1;
+    margin-bottom: 0px;
+  }
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 0px;
+  .card-title {
+    color: #231b06;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+
+  #card-text-brand {
+    color: #676767;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  #card-text-year {
+    color: #676767;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  #card-text-km {
+    color: #676767;
+    font-size: 14px;
+  }
+
+  .kms-span {
+    color: #676767;
+    font-size: 12px;
+    align-self: end;
+  }
+
+  #card-text-price {
+    color: #404040;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .text-year-km {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .btn {
+    align-self: center;
+    width: 100%;
+  }
 }
