@@ -5,7 +5,6 @@
   border-width: 2px;
   border-color: rgb(248, 201, 131);
   color: rgb(255, 246, 235);
-  // font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -49,7 +48,10 @@
   }
 }
 
-.navbar-lecarrossa-email {
-  margin-top: 0px;
-  // font-size: 16px;
+.navbar-lecarrossa-list {
+  list-style: none;
+}
+
+#my-name {
+  text-decoration: solid;
 }
