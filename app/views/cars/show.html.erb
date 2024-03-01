@@ -4,6 +4,8 @@
 <p><strong>Kilometers:</strong> <%= @car.km %></p>
 <p><strong>Owner:</strong> <%= @car.user.email %></p>
 
+<%= link_to 'Comprar', new_car_order_path(@car) %>
+
 <%= link_to 'Back', cars_path %>
 <% if @car.user == current_user %>
   <%= link_to 'editar carro', edit_car_path(@car) %>
