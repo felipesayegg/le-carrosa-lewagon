@@ -1,33 +1,44 @@
-<h2>Sign up</h2>
+<div class="bg-log-backgroud">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <div class="card">
+        <%= image_tag "car.jpg", class: "card-img-top"  %>
+        <div class="card-body">
+          <h5 class="card-title">Faço o seu cadastro</h5>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+          <div class="form-inputs">
+            <%= f.input :first_name %>
+            <%= f.input :last_name %>
+            <%= f.input :address %>
+            <%= f.input :zip_code %>
+            <%= f.input :phone %>
+            <%= f.input :city %>
+            <%= f.input :state %>
 
-  <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :address %>
-    <%= f.input :zip_code %>
-    <%= f.input :phone %>
-    <%= f.input :city %>
-    <%= f.input :state %>
-
-    <%= f.input :email,
+            <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
+            <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
+            <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-  </div>
+          </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up", class: "btn btn-page-sign-up-sign-up" %>
+          </div>
+          <% end %>
+          <%= render "devise/shared/links"%>
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
+</div>
