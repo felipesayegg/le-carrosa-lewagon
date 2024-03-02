@@ -14,6 +14,8 @@ class CarsController < ApplicationController
   end
 
   def create
+    # @car = Car.new(car_params)
+    # @car.user = current_user
     @car = current_user.cars.new(car_params)
     if @car.save
       redirect_to car_path(@car)
