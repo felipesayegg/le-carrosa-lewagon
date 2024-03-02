@@ -9,7 +9,7 @@
   </div>
   <%= link_to 'Back', cars_path %>
   <% if @car.user == current_user %>
-    <%= link_to 'editar carro', edit_car_path(@car) %>
+    <%= link_to 'editar carro', edit_car_path(@car), class: "btn btn-warning" %>
     <%= link_to  car_path(@car), data: {turbo_method: :delete}, class: "card-icon" do %>
       <i class="fa-solid fa-trash"></i>
     <% end %>
