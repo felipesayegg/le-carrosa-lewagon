@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
 
   def create
     @car = Car.find(params[:car_id])
-    @order = Order.new()
+    @order = Order.new
     @order.car = @car
     @order.user = current_user
     if @order.save
