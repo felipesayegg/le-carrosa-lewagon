@@ -1,0 +1,29 @@
+.title,
+.brand-input,
+.model-input,
+.year-input,
+.desc-input,
+.price-input,
+.km-input {
+  margin-bottom: 25px;
+}
+
+.desc-input {
+  .desc {
+    border-radius: 8px;
+  }
+}
+
+.photo-input {
+  margin-bottom: 35px;
+}
+
+.add-car-btn {
+  text-align: center;
+  margin-bottom: 20px;
+  .btn {
+    width: 300px;
+    color: $gold-black;
+    font-weight: 600;
+  }
+}
