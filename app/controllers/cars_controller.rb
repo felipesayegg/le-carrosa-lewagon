@@ -3,7 +3,7 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.all
-    @cars = Car.search_by_mod_and_brand(params[:query])
+    @cars = Car.search_by_mod_and_brand(params[:query]) if params[:query]
   end
 
   def show
