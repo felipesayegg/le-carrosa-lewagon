@@ -3,6 +3,11 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.all
+    @cars = Car.search_by_mod_and_brand(params[:query]) if params[:query]
+  end
+
+  def fipe_test
+    @car = Car.new
   end
 
   def show
@@ -52,5 +57,6 @@ class CarsController < ApplicationController
   def car_params
     params.require(:car).permit(:year, :km, :brand, :mod, :description, :price, photos: [])
   end
+
 
 end

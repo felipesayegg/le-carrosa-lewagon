@@ -1,3 +1,29 @@
+<%# <div class="mt-3 mb-3 ml-3 mr-3"> %>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://vendedordecarrospro.com.br/wp-content/uploads/2023/07/carro-a-venda.jpg);">
+  <div class="container mt-3 mb-3 ml-3 mr-3">
+    <h1>Le Carro S.A ! <strong>Melhor</strong> maneira <strong> de </strong>adiquirir e vender seu carro!</h1>
+    <p>Facilite sua vida e venha vender e comprar seu carro com a gente.</p>
+  </div>
+</div>
+
+</div>
+
+
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: root_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Procure o seu sonho aqui"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
 <div class="container d-flex justify-content-center">
   <div class="highlights-section">
     <h1>Anuncios em destaque</h1>

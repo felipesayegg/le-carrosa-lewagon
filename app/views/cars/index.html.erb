@@ -1,3 +1,16 @@
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: cars_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Procure o seu sonho aqui"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
 <div class="container d-flex justify-content-center">
   <div class="highlights-section sm-col-12 md-col-8">
     <h1>Anuncios em destaque</h1>
