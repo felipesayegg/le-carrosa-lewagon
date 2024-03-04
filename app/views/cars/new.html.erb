@@ -1,40 +1,29 @@
 <div class="container d-flex justify-content-center">
   <div class="form-card">
     <div class="title">
-      <h5 class="card-title">Cadastrar carro</h5>
+      <h5 class="card-title">Cadastre seu anúncio</h5>
     </div>
     <%= simple_form_for [@car] do |f| %>
-      <div class="brand-mod-year d-flex gap-3">
-        <div class="brand-input">
-          <%= f.input :brand, label: 'Marca' %>
-        </div>
-        <div class="model-input">
-          <%= f.input :mod, label: 'Modelo' %>
-        </div>
-        <div class="year-input">
-          <%= f.input :year, label: 'Ano' %>
-        </div>
+      <div class="brand-input">
+        <%= f.input :brand, label: "Marca" %>
+      </div>
+      <div class="model-input">
+        <%= f.input :mod, label: "Modelo" %>
+      </div>
+      <div class="year-input">
+        <%= f.input :year, label: "Ano" %>
       </div>
       <div class="desc-input">
-        <%= f.input :description, label: 'Descrição', class: 'desc' %>
+        <%= f.input :description, label: "Descrição", class: "desc" %>
       </div>
-      <div class="price-km d-flex gap-3">
-        <div class="price-input w-100">
-          <%= f.input :price, label: 'Valor' %>
-        </div>
-        <div class="km-input w-100">
-          <%= f.input :km, label: 'Km' %>
-        </div>
+      <div class="price-input">
+        <%= f.input :price, label: "Valor" %>
+      </div>
+      <div class="km-input">
+        <%= f.input :km, label: "Km" %>
       </div>
       <div class="photo-input">
-        <%=
-          f.input :photos,
-                  as: :file,
-                  input_html: {
-                    multiple: true,
-                  },
-                  label: 'Fotos'
-        %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Fotos"%>
       </div>
       <div class="add-car-btn">
         <%= f.submit 'Adicionar carro', class: 'btn btn-primary' %>
