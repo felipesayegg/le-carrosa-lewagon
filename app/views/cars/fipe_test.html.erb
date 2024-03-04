@@ -12,14 +12,13 @@
         <%= f.input :mod, collection: [], prompt: 'Selecione o modelo', label: "Modelo", input_html: { id: 'model_select', data: { controller: 'fipe', action: 'change->fipe#updateYears', target: 'fipe.model' } } %>
       </div>
       <div class="year-input">
-        <%= f.input :year, collection: [], prompt: 'Selecione o ano / combustível', label: "Ano - Combustível", input_html: { id: 'year_select', data: { controller: 'fipe', action: 'change->fipe#updatePrice', target: 'fipe.year' } } %>
+        <%= f.input :year, collection: [], prompt: 'Selecione o ano / combustível', label: "Ano - Combustível", input_html: { id: 'year_select', data: { controller: 'fipe', target: 'fipe.year' } } %>
       </div>
       <div class="desc-input">
         <%= f.input :description, label: "Descrição", class: "desc" %>
       </div>
       <div class="price-input">
         <%= f.input :price, label: "Valor" %>
-      <p, id= 'price_select', data= { controller= 'fipe', target= 'fipe.price'></p>
       </div>
       <div class="km-input">
         <%= f.input :km, label: "Km" %>
