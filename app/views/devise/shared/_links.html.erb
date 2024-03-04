@@ -10,7 +10,9 @@
 </div>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+
   <%= link_to "Esqueceu a senha?", new_password_path(resource_name), class: "forgot-pass-link"  %><br />
+
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
