@@ -76,16 +76,18 @@
           link_to 'Voltar', :back, class: 'btn btn-outline-primary signup-btn'
         %>
       </div>
+      <div class="d-flex justify-content-center">
+        <%=
+          button_to 'Deletar conta',
+                    registration_path(resource_name),
+                    data: {
+                      confirm: 'Are you sure?',
+                      turbo_confirm: 'Are you sure?',
+                    },
+                    method: :delete,
+                    class: 'btn btn-signup btn-del-profile'
+        %>
+      </div>
     <% end %>
-    <%=
-      link_to 'Deletar conta',
-              registration_path(resource_name),
-              data: {
-                confirm: 'Você tem certeza que quer deletar a sua conta?',
-                turbo_confirm: 'Você tem certeza que quer deletar a sua conta?',
-              },
-              method: :delete,
-              class: 'btn-del-profile'
-    %>
   </div>
 </div>

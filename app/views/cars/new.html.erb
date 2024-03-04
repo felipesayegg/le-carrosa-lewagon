@@ -4,26 +4,37 @@
       <h5 class="card-title">Cadastre seu anúncio</h5>
     </div>
     <%= simple_form_for [@car] do |f| %>
-      <div class="brand-input">
-        <%= f.input :brand, label: "Marca" %>
+      <div class="brand-mod d-flex gap-3 ">
+        <div class="brand-input w-100">
+          <%= f.input :brand, label: 'Marca' %>
+        </div>
+        <div class="model-input w-100">
+          <%= f.input :mod, label: 'Modelo' %>
+        </div>
       </div>
-      <div class="model-input">
-        <%= f.input :mod, label: "Modelo" %>
-      </div>
-      <div class="year-input">
-        <%= f.input :year, label: "Ano" %>
+      <div class="price-year-km d-flex gap-3">
+        <div class="year-input">
+          <%= f.input :year, label: 'Ano' %>
+        </div>
+        <div class="price-input">
+          <%= f.input :price, label: 'Valor' %>
+        </div>
+        <div class="km-input">
+          <%= f.input :km, label: 'Km' %>
+        </div>
       </div>
       <div class="desc-input">
-        <%= f.input :description, label: "Descrição", class: "desc" %>
-      </div>
-      <div class="price-input">
-        <%= f.input :price, label: "Valor" %>
-      </div>
-      <div class="km-input">
-        <%= f.input :km, label: "Km" %>
+        <%= f.input :description, label: 'Descrição', class: 'desc' %>
       </div>
       <div class="photo-input">
-        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Fotos"%>
+        <%=
+          f.input :photos,
+                  as: :file,
+                  input_html: {
+                    multiple: true,
+                  },
+                  label: 'Fotos'
+        %>
       </div>
       <div class="add-car-btn">
         <%= f.submit 'Adicionar carro', class: 'btn btn-primary' %>

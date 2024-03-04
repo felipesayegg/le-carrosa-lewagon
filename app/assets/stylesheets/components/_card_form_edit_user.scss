@@ -12,10 +12,10 @@
 }
 
 .btn-del-profile {
-  align-self: center;
-  font-size: 14px;
-  color: #404040;
   text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #404040;
   &:hover {
     color: #676767;
   }
