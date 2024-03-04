@@ -1,44 +1,91 @@
-<div class="bg-log-backgroud">
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-4">
-      <div class="card">
-        <%= image_tag "car.jpg", class: "card-img-top"  %>
-        <div class="card-body">
-          <h5 class="card-title">Faça o seu cadastro</h5>
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
+<div class="container d-flex justify-content-center">
+  <div class="form-card">
+    <div class="title">
+      <h5 class="card-title">Crie sua conta</h5>
+    </div>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs d-flex flex-column">
+        <div class="d-flex gap-3 first-last-name">
+          <div class="first-name-input w-100">
 
-          <div class="form-inputs">
             <%= f.input :first_name, label: 'Nome' %>
-            <%= f.input :last_name, label: 'Sobrenome' %>
-            <%= f.input :zip_code, label: 'CEP' %>
-            <%= f.input :address, label: 'Endereço' %>
-            <%= f.input :phone, label: 'Telefone' %>
+          </div>
+          <div class="last-name-input w-100">
+            <%= f.input :last_name, label: 'Sobre-nome' %>
+          </div>
+        </div>
+        <div class="address-input">
+          <%= f.input :address, label: 'Endereço' %>
+        </div>
+        <div class="d-flex gap-3 city-state-zip">
+          <div class="city-input">
             <%= f.input :city, label: 'Cidade' %>
+          </div>
+          <div class="state-input">
             <%= f.input :state, label: 'Estado' %>
-
-            <%= f.input :email, label: 'E-mail',
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-            <%= f.input :password, label: 'Senha',
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-            <%= f.input :password_confirmation, label: 'Repita a senha',
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
           </div>
-
-          <div class="form-actions">
-            <%= f.button :submit, "Criar", class: "btn btn-page-sign-up-sign-up" %>
+          <div class="zip-code-input">
+            <%= f.input :zip_code, label: 'CEP' %>
           </div>
-          <% end %>
-          <%= render "devise/shared/links"%>
+        </div>
+        <div class="d-flex gap-3 phone-email">
+          <div class="phone-input w-100">
+            <%= f.input :phone, label: 'Telefone' %>
+          </div>
+          <div class="email-input w-100">
+            <%=
+              f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: {
+                        autocomplete: 'email',
+                      }
+            %>
+          </div>
+        </div>
+        <div class="d-flex gap-3 pass-confirmpass">
+          <div class="pass-input w-100">
+            <%=
+              f.input :password,
+                      label: 'Senha',
+                      required: true,
+                      hint:
+                        (
+                          if @minimum_password_length
+                            "#{@minimum_password_length} characters minimum"
+                          end
+                        ),
+                      input_html: {
+                        autocomplete: 'new-password',
+                      }
+            %>
+          </div>
+          <div class="pass-confirm-input w-100">
+            <%=
+              f.input :password_confirmation,
+                      label: 'Confirmar senha',
+                      required: true,
+                      input_html: {
+                        autocomplete: 'new-password',
+                      }
+            %>
+          </div>
+r
         </div>
       </div>
-    </div>
+      <div class="form-actions form-flex">
+        <%=
+          f.button :submit,
+                   'Cadastrar',
+                   class: 'btn btn-primary signup-new-user-btn w-100'
+        %>
+        <%=
+          f.button :submit,
+                   'Entrar',
+                   class: 'btn-outline-primary login-new-user-btn w-100'
+        %>
+      </div>
+    <% end %>
   </div>
-</div>
 </div>
