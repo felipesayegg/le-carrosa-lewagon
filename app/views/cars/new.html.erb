@@ -1,24 +1,33 @@
-<div class="bg-log-backgroud">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-4">
-        <div class="card">
-          <%= image_tag "car.jpg", class: "card-img-top" %>
-          <div class="card-body">
-            <h5 class="card-title">Cadastre seu carro.</h5>
-            <%= simple_form_for [@car] do |f| %>
-            <%= f.input :brand, label: "Marca" %>
-            <%= f.input :mod, label: "Modelo" %>
-            <%= f.input :year, label: "Ano" %>
-            <%= f.input :description, label: "Descrição" %>
-            <%= f.input :price, label: "Valor" %>
-            <%= f.input :km, label: "Km" %>
-            <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Fotos"%>
-            <%= f.submit 'Adicionar carro', class: 'btn btn-primary' %>
-            <% end %>
-          </div>
-        </div>
-      </div>
+<div class="container d-flex justify-content-center">
+  <div class="form-card">
+    <div class="title">
+      <h5 class="card-title">Cadastre seu anúncio</h5>
     </div>
+    <%= simple_form_for [@car] do |f| %>
+      <div class="brand-input">
+        <%= f.input :brand, label: "Marca" %>
+      </div>
+      <div class="model-input">
+        <%= f.input :mod, label: "Modelo" %>
+      </div>
+      <div class="year-input">
+        <%= f.input :year, label: "Ano" %>
+      </div>
+      <div class="desc-input">
+        <%= f.input :description, label: "Descrição", class: "desc" %>
+      </div>
+      <div class="price-input">
+        <%= f.input :price, label: "Valor" %>
+      </div>
+      <div class="km-input">
+        <%= f.input :km, label: "Km" %>
+      </div>
+      <div class="photo-input">
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Fotos"%>
+      </div>
+      <div class="add-car-btn">
+        <%= f.submit 'Adicionar carro', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
   </div>
 </div>
