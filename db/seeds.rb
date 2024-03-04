@@ -14,7 +14,7 @@ User.create(email: 'marcosoftn1@gmail.com', password: '123123', first_name: "fel
     mod: Faker::Vehicle.model,
     description: Faker::Vehicle.standard_specs,
     price: Faker::Commerce.price(range: 10000.0..80000.0),
-    km: "#{Faker::Number.between(from: 1000, to: 100000)} km",
+    km: Faker::Number.between(from: 1000, to: 100000),
     user_id: Faker::Number.between(from: 1, to: 2) # associando aleatoriamente com um dos usuários criados acima
   )
 end

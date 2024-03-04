@@ -6,29 +6,44 @@
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <div class="e-mail-input">
-          <%= f.input :email,
-          required: true,
-          autofocus: true,
-          input_html: { autocomplete: "email" } %>
+          <%=
+            f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: {
+                      autocomplete: 'email',
+                    }
+          %>
         </div>
         <div class="pass-input">
-          <%= f.input :password,
-          required: false,
-          input_html: { autocomplete: "current-password" } %>
+          <%=
+            f.input :password,
+                    label: 'Senha',
+                    required: false,
+                    input_html: {
+                      autocomplete: 'current-password',
+                    }
+          %>
         </div>
         <div class="remember-box">
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%=
+            if devise_mapping.rememberable?
+              f.input :remember_me, label: 'Relembrar', as: :boolean
+            end
+          %>
         </div>
       </div>
-      <div class="form-actions form-flex ">
-        <%= f.button :submit, "Entrar", class: "btn btn-primary login-btn" %>
-        <%= link_to "Cadastrar", new_user_registration_path, class: "btn btn-outline-primary signup-btn" %>
+      <div class="form-actions form-flex">
+        <%= f.button :submit, 'Entrar', class: 'btn btn-primary login-btn' %>
+        <%=
+          link_to 'Cadastrar',
+                  new_user_registration_path,
+                  class: 'btn btn-outline-primary signup-btn'
+        %>
       </div>
     <% end %>
     <div class="forgot-pass-link">
-      <%= render "devise/shared/links" %>
-    </div>
+      <%= render 'devise/shared/links' %>
     </div>
   </div>
 </div>
- 
