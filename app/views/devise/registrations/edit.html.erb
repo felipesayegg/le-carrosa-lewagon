@@ -11,17 +11,14 @@
 
           <div class="form-inputs">
             <%= f.input :email, required: true, autofocus: true %>
-
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
             <% end %>
-
             <%= f.input :zip_code, label: 'CEP' %>
             <%= f.input :address, label: 'Endereço' %>
             <%= f.input :phone, label: 'Telefone' %>
             <%= f.input :city, label: 'Cidade' %>
             <%= f.input :state, label: 'Estado' %>
-
             <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
