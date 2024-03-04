@@ -17,6 +17,7 @@ export default class extends Controller {
     modelSelect.innerHTML = '';
     yearSelect.innerHTML = '';
 
+
     // Consulta à API para obter marcas de carros
     fetch(`https://parallelum.com.br/fipe/api/v1/carros/marcas/`)
       .then(response => response.json())
@@ -63,7 +64,7 @@ export default class extends Controller {
       .then(response => response.json())
       .then(data => {
         data.forEach(year => {
-          yearSelect.insertAdjacentHTML('beforeend', `<option value=${year.codigo}>${year.nome.substring(0, 4)}</option>`);
+          yearSelect.insertAdjacentHTML('beforeend', `<option name=${year.nome} value=${year.codigo}>${year.nome.substring(0, 4)}</option>`);
         });
       })
       .catch(error => console.error('Error fetching years:', error));
@@ -85,6 +86,5 @@ export default class extends Controller {
         priceSelect.innerHTML = `<strong>Valor sugerido pela FIPE: </strong>${data.Valor}`;
       })
       .catch(error => console.error('Error fetching years:', error));
-
   }
 }
