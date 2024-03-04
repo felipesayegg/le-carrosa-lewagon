@@ -52,16 +52,18 @@ export default class extends Controller {
     const brand = document.getElementById('brand_select');
     const modelId = document.getElementById('model_select');
     const yearSelect = document.getElementById('year_select');
+    const priceSelect = document.getElementById('price_select');
 
     // Limpar opções anteriores
     yearSelect.innerHTML = '';
+    priceSelect.innerHTML = '';
 
     // Consulta à API para obter anos do modelo selecionado
     fetch(`https://parallelum.com.br/fipe/api/v1/carros/marcas/${brand.value}/Modelos/${modelId.value}/Anos`)
       .then(response => response.json())
       .then(data => {
         data.forEach(year => {
-          yearSelect.insertAdjacentHTML('beforeend', `<option value="${year.codigo}">${year.nome}</option>`);
+          yearSelect.insertAdjacentHTML('beforeend', `<option value=${year.codigo}>${year.nome.substring(0, 4)}</option>`);
         });
       })
       .catch(error => console.error('Error fetching years:', error));
@@ -73,11 +75,14 @@ export default class extends Controller {
     const yearSelect = document.getElementById('year_select');
     const priceSelect = document.getElementById('price_select');
 
+    priceSelect.innerHTML = '';
+
+
     // Consulta à API para obter o valor da fipe
     fetch(`https://parallelum.com.br/fipe/api/v1/carros/marcas/${brand.value}/Modelos/${modelId.value}/Anos/${yearSelect.value}`)
       .then(response => response.json())
       .then(data => {
-        priceSelect.insertAdjacentHTML('afterend', `<strong>Valor sugerido pela FIPE: </strong>${data.Valor}`);
+        priceSelect.innerHTML = `<strong>Valor sugerido pela FIPE: </strong>${data.Valor}`;
       })
       .catch(error => console.error('Error fetching years:', error));
 
