@@ -5,6 +5,10 @@ class CarsController < ApplicationController
     @cars = Car.all
   end
 
+  def fipe_test
+    @car = Car.new
+  end
+
   def show
     @car = Car.find(params[:id])
   end
@@ -52,5 +56,6 @@ class CarsController < ApplicationController
   def car_params
     params.require(:car).permit(:year, :km, :brand, :mod, :description, :price, photos: [])
   end
+
 
 end

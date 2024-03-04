@@ -6,9 +6,6 @@
           <%= image_tag "car.jpg", class: "card-img-top" %>
           <div class="card-body">
             <%= simple_form_for [@car] do |f| %>
-            <%= f.input :brand, label: "Marca" %>
-            <%= f.input :mod, label: "Modelo" %>
-            <%= f.input :year, label: "Ano" %>
             <%= f.input :description, label: "Descrição" %>
             <%= f.input :price, label: "Valor" %>
             <%= f.input :km, label: "Km" %>
