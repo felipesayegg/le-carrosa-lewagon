@@ -25,7 +25,14 @@
         <%= f.input :km, label: "Km" %>
       </div>
       <div class="photo-input">
-        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Fotos"%>
+        <%=
+          f.input :photos,
+                  as: :file,
+                  input_html: {
+                    multiple: true,
+                  },
+                  label: 'Fotos'
+        %>
       </div>
       <div class="add-car-btn">
         <%= f.submit 'Adicionar carro', class: 'btn btn-primary' %>
