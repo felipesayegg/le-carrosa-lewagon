@@ -42,7 +42,7 @@
           <h3> <%= number_to_currency(@car.price) %></h3>
           <% if user_signed_in? %>
           <% if @car.user != current_user %>
-          <%= link_to 'Comprar', new_car_order_path(@car), class: "btn btn-success btn.lg btn m-3 " %>
+          <%= link_to 'Comprar', new_car_order_path(@car), class: "btn btn-success btn.lg btn m-1 " %>
           <% end %>
           <% else %>
           <%= link_to 'Comprar', new_car_order_path(new_user_session_path), class: "btn btn-success btn.lg btn m-5" %>
