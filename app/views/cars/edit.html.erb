@@ -26,7 +26,7 @@
           <div class="div-relative">
             <%= cl_image_tag photo.key, class: 'car-edit-photos' if @car.photos.any? %>
             <div class="trash-link">
-              <%= link_to '', delete_photo_car_path(@car, photo_id: photo.id), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'card-remove-link fa-solid fa-xmark' %>
+              <%= link_to '', delete_photo_car_path(@car, photo_id: photo.id), data: { turbo_method: :delete, turbo_confirm: 'Você tem certeza?' }, class: 'card-remove-link fa-solid fa-xmark' %>
             </div>
           </div>
         <% end %>
