@@ -34,7 +34,7 @@
     <h1>Anuncios em destaque</h1>
     <div class="cards">
       <% @cars.each do |car| %>
-      <% if car.user != current_user %>
+      <% if car.user != current_user && car.selled != true %>
         <div class="card">
           <div class="img">
             <%= cl_image_tag car.photos.first.key, crop: :fill, class: "img" if car.photos.any? %>
