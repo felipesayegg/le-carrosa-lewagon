@@ -1,0 +1,17 @@
+<!-- carousel -->
+
+<div id="carousel_slide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="100000000000">
+  <div class="carousel-inner">
+    <% @car.photos.each_with_index do |photo, index| %>
+      <div id="carousel_item_<%= index %>" class="carousel-item <%= index == 0 ? 'active' : '' %>"><%= cl_image_tag photo.key, class: 'carousel-img' %><br /></div>
+    <% end %>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel_slide" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel_slide" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
