@@ -1,4 +1,4 @@
-<div class=" mt-5 ">
+<div class=" mt-4 ">
   <div class="card-show-img  ">
     <% @car.photos.each do |photo|%>
     <div class="img" style="padding: 10px;">
@@ -13,8 +13,8 @@
 
 
 
-<div class="container-fluid mt-3 mb-3 border rounded p-3  bg-light">
-  <div class="row mt-5 pt-5" id="espaçamento-infos-esquerda" >
+<div class="container-fluid mt-3 mb-3 border rounded p-3 bg-light">
+  <div class="row" id="espaçamento-infos-esquerda" >
     <div class="col-6 mb-3 ">
     <div class="mb-3">
       <h1><strong> <%= @car.mod %> </strong> </h1>
@@ -24,7 +24,7 @@
       <p><strong>Vendedor:</strong> <%= @car.user.first_name %> <%= @car.user.last_name %></p>
 
     </div>
-      <div class="d-flex justify-content-space-between mb-3 ">
+      <div class="d-flex justify-content-space-between" style="height: 30px";>
       <%= link_to 'Back', cars_path, class: "btn btn-light" %>
       <% if @car.user == current_user %>
       <%= link_to 'editar carro', edit_car_path(@car), class: "btn btn-light" %>
@@ -32,7 +32,7 @@
       <i class="fa-solid fa-trash"></i>
       <% end %>
       <% end %>
-    </div>
+      </div>
     </div>
 
     <div class="col-6 d-flex justify-content-end">
