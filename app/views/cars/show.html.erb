@@ -38,7 +38,7 @@
     <div class="col-6 d-flex justify-content-end">
       <div class="row me-3" id="espaçamento-infos-direita">
         <div class="col-6">
-          <h1><strong> Valor </strong></h1>
+          <h1><strong>Valor:</strong></h1>
           <h3> <%= number_to_currency(@car.price) %></h3>
           <% if user_signed_in? %>
           <% if @car.user != current_user %>
