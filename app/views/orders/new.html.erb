@@ -4,7 +4,13 @@
     <div class="row justify-content-center">
       <div class="col-4">
         <div class="card">
-          <%= image_tag "car.jpg", class: "card-img-top" %>
+
+          <% if @car.photos.any? %>
+            <%=  cl_image_tag @car.photos.first.key, crop: :fill, class: 'card-img-top' %>
+          <%  else %>
+             <%= image_tag "car.jpg", class: "card-img-top" %>
+          <%  end %>
+
           <div class="card-body">
             <h5 class="card-title"><strong>Dados da compra:</strong></h5>
             <p>Marca: <%= @car.brand %></p>
