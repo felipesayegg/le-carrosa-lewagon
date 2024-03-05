@@ -1,23 +1,36 @@
-<div class="bg-log-backgroud">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-4">
-        <div class="card">
-          <%= image_tag "car.jpg", class: "card-img-top" %>
-          <div class="card-body">
-            <%= simple_form_for [@car] do |f| %>
-            <%= f.input :description, label: "Descrição" %>
-            <%= f.input :price, label: "Valor" %>
-            <%= f.input :km, label: "Km" %>
-            <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Fotos"%>
-            <%= f.submit 'Editar carro', class: 'btn btn-primary' %>
-            <% end %>
-            <% @car.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-            <% end %>
-          </div>
+<div class="container d-flex justify-content-center">
+  <div class="form-card">
+    <div class="title">
+      <h5>Alterar o seu anúncio</h5>
+    </div>
+    <%= simple_form_for [@car] do |f| %>
+      <div class="price-km d-flex gap-3">
+        <div class="price-input w-100">
+          <%= f.input :price, label: 'Valor' %>
+        </div>
+        <div class="km-input w-100">
+          <%= f.input :km, label: 'Km' %>
         </div>
       </div>
-    </div>
+      <div class="desc-input">
+        <%= f.input :description, label: 'Descrição' %>
+      </div>
+      <div class="photo-input">
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Fotos' %>
+      </div>
+      <div class="edit-car-btn">
+        <%= f.submit 'Aplicar alterações', class: 'btn btn-primary' %>
+      </div>
+      <div class="grid-photos">
+        <% @car.photos.each do |photo| %>
+          <div class="div-relative">
+            <%= cl_image_tag photo.key, class: 'car-edit-photos' if @car.photos.any? %>
+            <div class="trash-link">
+              <%= link_to '', delete_photo_car_path(@car, photo_id: photo.id), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'card-remove-link fa-solid fa-xmark' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
