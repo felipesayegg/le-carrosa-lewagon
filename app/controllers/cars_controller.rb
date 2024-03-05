@@ -19,6 +19,8 @@ class CarsController < ApplicationController
   end
 
   def create
+    # @car = Car.new(car_params)
+    # @car.user = current_user
     @car = current_user.cars.new(car_params)
 
     brand_id = @car.brand
