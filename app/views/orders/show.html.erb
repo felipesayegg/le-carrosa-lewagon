@@ -1,9 +1,20 @@
-<h2><%= @order.user.first_name %>, seu pedido <strong><%= @order.id %></strong> foi efetuado com sucesso</h2>
-<br>
+<div class="container mt-3 d-flex justify-content-center ">
 
-<h3><strong>Dados do pedido:</strong></h3>
-<p>Marca: <%= @order.car.brand %></p>
-<p>Modelo: <%= @order.car.mod %></p>
-<p>Vendedor: <%= @order.car.user.first_name %></p>
-<p>Comprador: <%= @order.user.first_name %></p>
-<p>Data do pedido: <%= @order.created_at %></p>
+<div class="container d-flex justify-content-center flex-column">
+  <div class="highlights-section">
+    <h1>Minha compra</h1>
+    <div class="cards">
+      <div class="card-order">
+        <div class="card-body mt-3">
+          <h4>Dados do pedido</h4>
+          <p> <strong> Marca:</strong>  <%= @order.car.brand %></p>
+          <p> <strong> Modelo: </strong>  <%= @order.car.mod %></p>
+          <p> <strong> Vendedor: </strong>  <%= @order.car.user.first_name %></p>
+          <p> <strong> Comprador: </strong>  <%= @order.user.first_name %></p>
+          <p> <strong> Data do pedido:</strong>  <%= @order.created_at.to_s.slice(0,10) %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
