@@ -1,0 +1,50 @@
+#carousel-banner {
+  display: flex;
+  // background-image: url("./carro.jpg");
+  // background-color: #cccccc;
+  margin-top: 0px;
+  padding: 0px;
+  margin-top: 0px;
+  padding: 0px;
+  height: 500px;
+  position: relative;
+
+  .banner-title {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 145px;
+    right: 12px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+
+    h1 {
+      color: #fff;
+      font-size: 32px;
+    }
+
+    p {
+      color: #fff;
+      font-weight: 600;
+      margin-top: 10px;
+      font-size: 22px;
+    }
+
+    span {
+      color: $gold-4;
+    }
+  }
+
+  .slid-1,
+  .slid-2,
+  .slid-3 {
+    width: 100%;
+    object-fit: cover;
+    height: 400px;
+    opacity: 80%;
+  }
+}
