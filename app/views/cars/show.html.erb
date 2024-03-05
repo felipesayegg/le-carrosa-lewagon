@@ -17,11 +17,11 @@
   <div class="row mt-5 pt-5" id="espaçamento-infos-esquerda" >
     <div class="col-6 mb-3 ">
     <div class="mb-3">
-      <h1><strong> Modelo do carro </strong> </h1>
-      <h3><%= @car.brand %> <%= @car.mod %> <%= @car.year %></h3>
+      <h1><strong> <%= @car.mod %> </strong> </h1>
+      <h3><%= @car.year %> - <%= @car.brand %> </h3>
       <p><strong>Descrição:</strong> <%= @car.description %></p>
       <p><strong>Kilômetros:</strong> <%= @car.km %></p>
-      <p><strong>Vendedor:</strong> <%= @car.user.email %></p>
+      <p><strong>Vendedor:</strong> <%= @car.user.first_name %> <%= @car.user.last_name %></p>
 
     </div>
       <div class="d-flex justify-content-space-between mb-3 ">
@@ -38,8 +38,8 @@
     <div class="col-6 d-flex justify-content-end">
       <div class="row me-3" id="espaçamento-infos-direita">
         <div class="col-6">
-          <h1><strong>Valor:</strong></h1>
-          <h3> <%= number_to_currency(@car.price) %></h3>
+          <h1><strong> Valor </strong></h1>
+          <h3><%= number_to_currency(@car.price) %></h3>
           <% if user_signed_in? %>
           <% if @car.user != current_user %>
           <%= link_to 'Comprar', new_car_order_path(@car), class: "btn btn-success btn.lg btn m-1 " %>

@@ -19,6 +19,8 @@ class CarsController < ApplicationController
   end
 
   def create
+    # @car = Car.new(car_params)
+    # @car.user = current_user
     @car = current_user.cars.new(car_params)
 
     brand_id = @car.brand
@@ -82,11 +84,16 @@ class CarsController < ApplicationController
     @cars = current_user.cars
   end
 
+  def delete_photo
+    @car = current_user.cars.find(params[:id])
+    photo = @car.photos.find_by(id: params[:photo_id])
+    photo.purge if photo.present?
+    redirect_to edit_car_path(@car)
+  end
+
   private
 
   def car_params
     params.require(:car).permit(:year, :km, :brand, :mod, :description, :price, photos: [])
   end
-
-
 end
