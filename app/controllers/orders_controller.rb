@@ -18,6 +18,9 @@ class OrdersController < ApplicationController
     @order = Order.new
     @order.car = @car
     @order.user = current_user
+    @car.selled = true
+    @car.save
+
     if @order.save
       redirect_to order_path(@order)
     else
