@@ -1,0 +1,22 @@
+.pass-confirmpass {
+  .hint {
+    font-size: 14px;
+  }
+}
+
+.current-pass-input {
+  margin-top: 0;
+  .hint {
+    font-size: 14px;
+  }
+}
+
+.btn-del-profile {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #404040;
+  &:hover {
+    color: #676767;
+  }
+}
