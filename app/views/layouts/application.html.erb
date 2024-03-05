@@ -12,6 +12,6 @@
   <%= render "shared/flashes" %>
 
   <%= yield %>
-  <%= render 'shared/footer' %>
+  <%= render 'shared/footer' unless  current_page?(edit_user_registration_path) %>
 </body>
 </html>

@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
   def index
     @orders = current_user.orders
-    console
   end
 
   def show

@@ -13,3 +13,9 @@
 @import "cars/show";
 @import "components/footer";
 @import "cars/home";
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
