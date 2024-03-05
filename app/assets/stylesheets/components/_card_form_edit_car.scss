@@ -1,0 +1,54 @@
+.desc-input {
+  margin-bottom: 25px;
+  margin-top: 0px;
+}
+
+.photos-input {
+  margin-bottom: 30px;
+}
+
+.edit-car-btn {
+  text-align: center;
+  margin-bottom: 45px;
+  margin-top: 20px;
+  .btn {
+    width: 300px;
+    color: $gold-black;
+    font-weight: 600;
+  }
+}
+
+.grid-photos {
+  padding: 0px;
+  margin: 0px;
+  display: grid;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  margin-top: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 200px));
+
+  .car-edit-photos {
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .div-relative {
+    position: relative;
+  }
+
+  .trash-link {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+  }
+
+  .fa-xmark {
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+  }
+}

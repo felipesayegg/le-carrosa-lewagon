@@ -4,44 +4,46 @@
       <h5 class="card-title">Cadastre seu anúncio</h5>
     </div>
     <div data-controller="fipe" >
-    <%= simple_form_for [@car] do |f| %>
-      <div class="brand-input">
-      <%= f.input :brand, collection: [], prompt: 'Selecione a Marca', label: "Marca", input_html: { id: 'brand_select', data: { controller: 'fipe', action: 'change->fipe#updateModels', target: 'fipe.brand' } } %>
-      </div>
-      <div class="model-input">
-        <%= f.input :mod, collection: [], prompt: 'Selecione o modelo', label: "Modelo", input_html: { id: 'model_select', data: { controller: 'fipe', action: 'change->fipe#updateYears', target: 'fipe.model' } } %>
-      </div>
-      <div class="year-input">
-        <%= f.input :year, collection: [], prompt: 'Selecione o ano', label: "Ano", input_html: { id: 'year_select', data: { controller: 'fipe', action: 'change->fipe#updatePrice', target: 'fipe.year' } } %>
-      </div>
-      <div class="desc-input">
-        <%= f.input :description, label: "Descrição", class: "desc" %>
-      </div>
-      <div class="price-input">
-        <%= f.input :price, label: "Valor" %>
-      <p id= 'price_select', data= { controller= 'fipe', target= 'fipe.price'></p>
-      </div>
-      <div class="km-input">
-        <%= f.input :km, label: "Km" %>
-      </div>
-      <div class="photo-input">
-        <%=
-          f.input :photos,
-                  as: :file,
-                  input_html: {
-                    multiple: true,
-                  },
-                  label: 'Fotos'
-        %>
-      </div>
-      <div class="add-car-btn">
-        <%= f.submit 'Adicionar carro', class: 'btn btn-primary' %>
-      </div>
-    <% end %>
+      <%= simple_form_for [@car] do |f| %>
+        <div class="brand-input">
+        <%= f.input :brand, collection: [], prompt: 'Selecione a Marca', label: "Marca", input_html: { id: 'brand_select', data: { controller: 'fipe', action: 'change->fipe#updateModels', target: 'fipe.brand' } } %>
+        </div>
+
+        <div class="model-input">
+          <%= f.input :mod, collection: [], prompt: 'Selecione o modelo', label: "Modelo", input_html: { id: 'model_select', data: { controller: 'fipe', action: 'change->fipe#updateYears', target: 'fipe.model' } } %>
+        </div>
+
+        <div class="year-input">
+          <%= f.input :year, collection: [], prompt: 'Selecione o ano', label: "Ano", input_html: { id: 'year_select', data: { controller: 'fipe', action: 'change->fipe#updatePrice', target: 'fipe.year' } } %>
+        </div>
+
+        <div class="desc-input">
+          <%= f.input :description, label: "Descrição", class: "desc" %>
+        </div>
+        <div class="price-input">
+          <%= f.input :price, label: "Valor" %>
+        <p id= 'price_select', data= { controller= 'fipe', target= 'fipe.price'></p>
+        </div>
+        <div class="km-input">
+          <%= f.input :km, label: "Km" %>
+        </div>
+        <div class="photo-input">
+          <%=
+            f.input :photos,
+                    as: :file,
+                    input_html: {
+                      multiple: true,
+                    },
+                    label: 'Fotos'
+          %>
+        </div>
+        <div class="add-car-btn">
+          <%= f.submit 'Adicionar carro', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
-
 <div data-controller="veiculos">
   <ul class="marcas-list">
     <!-- A lista de marcas será preenchida dinamicamente aqui -->

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :cars do
     resources :orders, only: [:new, :create]
+    delete 'delete_photo', on: :member
   end
 
   resources :orders, only: [:show, :index]
