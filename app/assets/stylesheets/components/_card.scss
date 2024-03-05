@@ -22,6 +22,20 @@ p {
     opacity: 1;
   }
 
+  }
+
+  .card-order {
+    display: flex;
+    border: none;
+    width: 500px; // 10% smaller than original 280px
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin: 0;
+    padding: 15px;
+    transition: all 0.4s ease;
+    opacity: 0.85;
+
   .img {
     width: 100%;
     height: 198px; // 10% smaller than original 220px
