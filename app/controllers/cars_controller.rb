@@ -82,6 +82,13 @@ class CarsController < ApplicationController
     @cars = current_user.cars
   end
 
+  def delete_photo
+    @car = current_user.cars.find(params[:id])
+    photo = @car.photos.find_by(id: params[:photo_id])
+    photo.purge if photo.present?
+    redirect_to edit_car_path(@car)
+  end
+
   private
 
   def car_params
