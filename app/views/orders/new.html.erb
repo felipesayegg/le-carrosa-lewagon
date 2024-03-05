@@ -1,28 +1,44 @@
-
-<div class="bg-log-backgroud">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-4">
-        <div class="card">
-
-          <% if @car.photos.any? %>
-            <%=  cl_image_tag @car.photos.first.key, crop: :fill, class: 'card-img-top' %>
-          <%  else %>
-             <%= image_tag "car.jpg", class: "card-img-top" %>
-          <%  end %>
-
-          <div class="card-body">
-            <h5 class="card-title"><strong>Dados da compra:</strong></h5>
-            <p>Marca: <%= @car.brand %></p>
-            <p>Modelo: <%= @car.mod %></p>
-            <p>Vendedor: <%= @car.user.first_name %></p>
-            <p>Preço: R$<%= @car.price %></p>
-            <%= simple_form_for [@car, @order] do |f| %>
-            <%= f.submit 'Confirmar compra', class: 'btn btn-primary' %>
-            <% end %>
-          </div>
-        </div>
+<div class="container d-flex justify-content-center">
+  <%# Carousel as photo galary %>
+  <div class="confirm-card">
+    <div id="carousel_slide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="100000000000">
+      <div class="carousel-inner">
+        <% @car.photos.each_with_index do |photo, index| %>
+          <div id="carousel_item_<%= index %>" class="carousel-item <%= index == 0 ? 'active' : '' %>"><%= cl_image_tag photo.key, class: 'carousel-img' %><br /></div>
+        <% end %>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carousel_slide" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carousel_slide" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="card-body">
+      <div class="card-title">
+        <h5>Dados da compra:</h5>
+      </div>
+      <p id="brand" class="card-text-order">
+        Marca: <span> <%= @car.brand %></span>
+      </p>
+      <p class="card-text-order">
+        Modelo: <span><%= @car.mod %></span>
+      </p>
+      <p class="card-text-order">
+        Vendedor: <span><%= @car.user.first_name %></span>
+      </p>
+      <p class="card-text-order">
+        Preço: <span>R$ <%= @car.price %></span>
+      </p>
+
+      <%= simple_form_for [@car, @order] do |f| %>
+        <div class="button">
+          <%= f.submit 'Confirmar compra', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

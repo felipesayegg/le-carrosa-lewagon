@@ -1,17 +1,26 @@
-<h1>Minhas compras</h1>
-
-<div class="row">
-  <% @orders.each do |order| %>
-    <div class="col-md-4 mb-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><%= order.car.mod %></h5>
-          <p class="card-text">Comprador: <%= order.car.user.first_name %></p>
-          <p class="card-text">Data da venda: <%= order.created_at %></p>
-          <p class="card-text">Valor da venda: R$<%= order.car.price %>0</p>
-           <%= link_to "Ver mais", order_path(order), class: "btn btn-primary" %>
+<div class="container d-flex justify-content-center">
+  <div class="highlights-section">
+    <h1>Minhas compras</h1>
+    <div class="cards">
+      <% @orders.each do |order| %>
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">
+              <h5 class="card-title"><%= order.car.mod %></h5>
+            </div>
+            <p class="card-text ">
+              Vendedor: <span><%= order.user.first_name %></span>
+            </p>
+            <p class="card-text">
+              Data: <span><%= order.created_at %></span>
+            </p>
+            <p id="price" class="card-text">
+              Valor: R$ <span><%= order.car.price %>0</span>
+            </p>
+            <%= link_to 'Ver mais', order_path(order), class: 'btn btn-primary' %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
