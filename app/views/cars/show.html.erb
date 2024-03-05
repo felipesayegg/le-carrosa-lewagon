@@ -27,7 +27,7 @@
       <div class="d-flex justify-content-space-between mb-3 ">
       <%= link_to 'Back', cars_path, class: "btn btn-light" %>
       <% if @car.user == current_user and @car.selled != true %>
-      <%= link_to 'editar carro', edit_car_path(@car), class: "btn btn-light" %>
+      <%= link_to 'Editar carro', edit_car_path(@car), class: "btn btn-light" %>
       <%= link_to  car_path(@car), data: {turbo_method: :delete}, class: "card-icon m-2" do %>
       <i class="fa-solid fa-trash"></i>
       <% end %>
