@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-4">
-        <div class="card">
+        <div class="card" style="margin-top: 20px">
 
           <% if @car.photos.any? %>
             <%=  cl_image_tag @car.photos.first.key, crop: :fill, class: 'card-img-top' %>
@@ -13,10 +13,10 @@
 
           <div class="card-body">
             <h5 class="card-title"><strong>Dados da compra:</strong></h5>
-            <p>Marca: <%= @car.brand %></p>
-            <p>Modelo: <%= @car.mod %></p>
-            <p>Vendedor: <%= @car.user.first_name %></p>
-            <p>Preço: R$<%= @car.price %></p>
+            <p><strong>Marca:</strong> <%= @car.brand %></p>
+            <p><strong>Modelo:</strong> <%= @car.mod %></p>
+            <p><strong>Vendedor:</strong> <%= @car.user.first_name %></p>
+            <p><strong>Preço:</strong> R$<%= @car.price %></p>
             <%= simple_form_for [@car, @order] do |f| %>
             <%= f.submit 'Confirmar compra', class: 'btn btn-primary' %>
             <% end %>
