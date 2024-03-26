@@ -1,3 +1,5 @@
+<%# Banner - Carousel %>
+
 <div id="carousel-banner" data-bs-ride="carousel" data-bs-interval="5000">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -11,10 +13,13 @@
     </div>
   </div>
   <div class="banner-title">
-    <h1>Le carro s<span>.</span>a, a melhor maneira de comprar ou vender o seu carro!</h1>
+    <h1>Le carro s<span>.</span>a<span>.</span>, a melhor maneira de comprar ou vender o seu carro!</h1>
     <p>Facilite sua vida, venha vender ou comprar seu veículo com a gente.</p>
   </div>
 </div>
+
+<%# Search-Bar %>
+
 <div class="container d-flex justify-content-center flex-column">
   <div class="search-bar">
     <%= form_with url: root_path, method: :get do %>
@@ -28,6 +33,9 @@
       </div>
     <% end %>
   </div>
+
+  <%# Cards %>
+
   <div class="highlights-section">
     <h1>Anuncios em destaque</h1>
     <div class="cards">
@@ -45,6 +53,9 @@
             <div class="text-year-km">
               <p id="card-text-year" class="card-text"><%= car.year %></p>
               <p id="card-text-km" class="card-text"><%= car.km %> <span class="kms-span">kms</span></p>
+              </div>
+              <p id="card-text-price" class="card-text">R$ <%= car.price %></p>
+              <%= link_to 'Ver mais', car_path(car), class: 'btn btn-primary' %>
             </div>
           </div>
         <% end %>

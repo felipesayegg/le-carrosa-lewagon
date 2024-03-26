@@ -23,6 +23,7 @@ p {
     opacity: 1;
   }
 
+
   .img {
     width: 100%;
     height: 198px; // 10% smaller than original 220px
@@ -52,6 +53,22 @@ p {
       display: inline-block;
       width: 215px;
     }
+
+    .card-text {
+      margin-bottom: 6px;
+      font-size: 12px;
+      span {
+        font-weight: 600;
+        color: #231b06;
+        font-size: 14px;
+      }
+    }
+
+    // Card minhas compras inicio
+    #price {
+      margin-bottom: 20px;
+    }
+    // Card minhas compras fim
 
     #card-text-brand,
     #card-text-year,
@@ -84,6 +101,8 @@ p {
     .btn {
       align-self: center;
       width: 100%;
+      color: $gold-black;
+      font-weight: 600;
     }
   }
 
@@ -91,6 +110,18 @@ p {
     content: "";
     display: inline-block;
   }
+}
+.card-order {
+  display: flex;
+  border: none;
+  width: 500px; // 10% smaller than original 280px
+  background: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: 0;
+  padding: 15px;
+  transition: all 0.4s ease;
+  opacity: 0.85;
 }
 
 // Não editar o card

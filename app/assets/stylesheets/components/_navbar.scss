@@ -1,6 +1,6 @@
 .navbar-lecarrossa {
   // General configs
-
+  flex-shrink: 0;
   height: 70px;
   padding: 0;
   background-color: rgb(241, 241, 241);
@@ -71,8 +71,7 @@
 }
 
 .navbar-lecarrossa-logo {
-  height: auto;
-  width: 140px;
+  height: 25px;
   padding: 0px;
   margin: 0px;
 }
