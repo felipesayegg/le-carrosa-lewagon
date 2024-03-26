@@ -7,6 +7,7 @@ p {
 .card {
   display: flex;
   border: none;
+  height: 400px;
   width: 252px; // 10% smaller than original 280px
   background: #ffffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -37,11 +38,20 @@ p {
     align-items: flex-start;
     padding-top: 0;
 
+    height: 1.2em;
+    line-height: 1.2em;
+
     .card-title {
       color: #231b06;
       font-size: 16px; // 10% smaller than original 18px
       font-weight: 600;
       margin-top: 15px; // Adjusted margin
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      width: 215px;
     }
 
     .card-text {
@@ -96,6 +106,10 @@ p {
     }
   }
 
+  .card-body::before {
+    content: "";
+    display: inline-block;
+  }
 }
 .card-order {
   display: flex;
