@@ -44,6 +44,22 @@ p {
       margin-top: 15px; // Adjusted margin
     }
 
+    .card-text {
+      margin-bottom: 6px;
+      font-size: 12px;
+      span {
+        font-weight: 600;
+        color: #231b06;
+        font-size: 14px;
+      }
+    }
+
+    // Card minhas compras inicio
+    #price {
+      margin-bottom: 20px;
+    }
+    // Card minhas compras fim
+
     #card-text-brand,
     #card-text-year,
     #card-text-km {
@@ -75,6 +91,8 @@ p {
     .btn {
       align-self: center;
       width: 100%;
+      color: $gold-black;
+      font-weight: 600;
     }
   }
 
